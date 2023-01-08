@@ -219,6 +219,16 @@ export default Vue.extend({
           cellEdited: this.cellEdited,
           editor: vueEditor(NullableInputEditorVue)
         }),
+        (this.disabledFeatures?.informationSchema?.comment ? null : {
+          title: "Comment",
+          field: 'comment',
+          tooltip: true,
+          headerTooltip: 'Comment',
+          editable: this.isCellEditable.bind(this, 'alterColumn'),
+          formatter: this.cellFormatter,
+          cellEdited: this.cellEdited,
+          editor: vueEditor(NullableInputEditorVue)
+        }),
         {
           title: 'Primary',
           field: 'primary',
